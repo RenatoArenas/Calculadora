@@ -20,7 +20,8 @@
             <div class="calculator-container">
                 <div class="calculator-container--display">
                     <div class="calculator-history--button">
-                        <i class="fas fa-history"></i>
+                        <h1>Calculadora</h1>
+                        <i class="fas fa-history" id="history"></i>
                     </div>
                     <div class="calculator-display">
                         <div class="calculator-display--save" id="save">
@@ -31,25 +32,36 @@
                     </div>
                 </div>
                 <div class="calculator-buttons" id="calculator-buttons">
-                    <div class="calculator-button">7</div>
-                    <div class="calculator-button">4</div>
-                    <div class="calculator-button">1</div>
-                    <div class="calculator-button calculator-button--clear" id="clear">C</div>
-                    <div class="calculator-button">8</div>
-                    <div class="calculator-button">5</div>
-                    <div class="calculator-button">2</div>
-                    <div class="calculator-button">0</div>
-                    <div class="calculator-button">9</div>
-                    <div class="calculator-button">6</div>
-                    <div class="calculator-button">3</div>
-                    <div class="calculator-button">.</div>
-                    <div class="calculator-button calculator-button--sign">/</div>
-                    <div class="calculator-button calculator-button--sign">x</div>
-                    <div class="calculator-button calculator-button--sign">-</div>
-                    <div class="calculator-button calculator-button--sign">+</div>
-                    <div class="calculator-button calculator-button--others">+/-</div>
-                    <div class="calculator-button calculator-button--others" id="delete">→</div>
-                    <div class="calculator-button calculator-button--equal" id="equal">=</div>
+                    <button class="calculator-button">7</button>
+                    <button class="calculator-button">4</button>
+                    <button class="calculator-button">1</button>
+                    <button class="calculator-button calculator-button--clear" id="clear">C</button>
+                    <button class="calculator-button">8</button>
+                    <button class="calculator-button">5</button>
+                    <button class="calculator-button">2</button>
+                    <button class="calculator-button">0</button>
+                    <button class="calculator-button">9</button>
+                    <button class="calculator-button">6</button>
+                    <button class="calculator-button">3</button>
+                    <button class="calculator-button">.</button>
+                    <button class="calculator-button calculator-button--sign">/</button>
+                    <button class="calculator-button calculator-button--sign">x</button>
+                    <button class="calculator-button calculator-button--sign">-</button>
+                    <button class="calculator-button calculator-button--sign">+</button>
+                    <button class="calculator-button calculator-button--others">+/-</button>
+                    <button class="calculator-button calculator-button--others" id="delete">→</button>
+                    <button class="calculator-button calculator-button--equal" id="equal">=</button>
+                </div>
+            </div>
+            <div class="calculator-history" id="calculator-history--container">
+                <div class="calculator-history--button calculator-history--button-inshow">
+                    <h1>Historial</h1>
+                    <i class="far fa-times-circle" id="close"></i>
+                </div>
+                <div class="calculator-history--items" id="calculator-history--items">
+                    <div class="calculator-history--item" id="none-histories">
+                        <p>No hay historial aún</p>
+                    </div>
                 </div>
             </div>
         </div>

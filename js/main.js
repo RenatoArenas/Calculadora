@@ -5,6 +5,7 @@ document.getElementById('delete').addEventListener('click', del);
 
 const save = document.getElementById("save");
 const number = document.getElementById("number");
+const calculator_history_items = document.getElementById("calculator-history--items");
 
 let clickElement;
 let numbers = [];
@@ -82,11 +83,22 @@ function resolve() {
     console.log(numbers);
 }
 
+function saveHistory() {
+    if (numbers[0] > 0) {
+        calculator_history_items.innerHTML += ` 
+        <div class="calculator-history--item">
+            <div class="calculator-display--save" id="save-history">${save.innerText}</div>
+            <div class="calculator-display--number" id="number-history">${result}</div>
+        </div>
+        `
+    }
+}
 function showResult() {
     resolve();
     number.innerText = result;
     saveText = document.createTextNode(numberIn + " " + signIn + " ");
     save.appendChild(saveText);
+    saveHistory();
     numberIn = numbers[0];
     numbers= []
 }
