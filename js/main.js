@@ -1,5 +1,5 @@
 document.getElementById('calculator-buttons').addEventListener('click', saveNumbers);
-document.getElementById('equal').addEventListener('click', resolve);
+document.getElementById('equal').addEventListener('click', showResult);
 document.getElementById('clear').addEventListener('click', clear);
 document.getElementById('delete').addEventListener('click', del);
 
@@ -52,15 +52,12 @@ function saveNumbers(e) {
         }
 
         number.innerText = "";
-        numbers.push(Number(numberIn));
+        resolve();
         signIn = clickElement;
-        for (let i = 0; i < numbers.length; i++) {
-            saveText = document.createTextNode(numbers[i] + " " + signIn + " ");
-        }
-        save.appendChild(saveText);
+        save.innerText = result + " " + signIn +  " ";
+        
         numberIn = "";
     }
-    console.log(numbers);
 }
 
 function resolve() {
@@ -78,16 +75,20 @@ function resolve() {
         else if (signIn == "/") {
             return a / b;
         }
-        
     });
-    for (let i = 0; i < numbers.length; i++) {
-        saveText = document.createTextNode(numbers[i]);
-    }
-    save.appendChild(saveText);
-    signIn = "=";
+    signIn = "";
+    numbers = [result];
+    console.log(result);
+    console.log(numbers);
+}
+
+function showResult() {
+    resolve();
     number.innerText = result;
-    numberIn = result;
-    numbers = [];
+    saveText = document.createTextNode(numberIn + " " + signIn + " ");
+    save.appendChild(saveText);
+    numberIn = numbers[0];
+    numbers= []
 }
 
 function clear() {
